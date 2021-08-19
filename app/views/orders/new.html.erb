@@ -1,0 +1,9 @@
+<h1>取出</h1>
+
+<%= form_with model: @order, url: take_orders_path(@take),local:true do |f| %>
+ <h3>名前</h3>
+ <%= f.text_field :user_name %>
+ <h3>数量</h3>
+ <%= f.text_field :take_out %>
+ <%= f.submit "確定" %>
+<% end %>

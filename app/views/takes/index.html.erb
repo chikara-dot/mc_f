@@ -1,0 +1,7 @@
+<h1>在庫表</h1>
+<%= link_to "追加", new_take_path %>
+
+<% @takes.each do |take| %>
+<h3>商品名</h3>
+<%= link_to take.name, new_take_order_path(take) %>
+<% end %>
