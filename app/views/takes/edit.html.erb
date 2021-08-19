@@ -1,0 +1,10 @@
+<h1>編集</h1>
+<%= form_with model:@take, local:true do |f| %>
+  <%= f.label "商品名" %>
+  <%= f.text_field :name %>
+  <%= f.label "在庫"%>
+  <%= f.text_field :remaining %>
+  <%= f.label "最低個数" %>
+  <%= f.text_field :lowest %>
+  <%= f.submit '変更' %>
+<% end %>
