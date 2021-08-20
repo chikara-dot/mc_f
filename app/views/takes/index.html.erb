@@ -1,10 +1,25 @@
-<h1>在庫表</h1>
-<%= link_to "追加", new_take_path %>
-<h3>商品名</h3>
-<% @takes.each do |take| %>
-<div>
-    <%= link_to take.name, new_take_order_path(take) %>
-    <%= take.remaining%>
-    <%= link_to "在庫", edit_take_path(take) %>
+<div class="container">
+ <div class="row">
+  <div class="col", style="margin-bottom: 150px; ">
+    <h1 class="mt-5">在庫表</h1>
+    <%= link_to "追加", new_take_path %>
+    <table class="table table-borderd table-hover">
+     <thead class="thead-light">
+         <tr>
+            <th>商品名</th>
+            <th>在庫</th>
+         </tr>
+     </thead>
+     <tbody class="border">
+        <% @takes.each do |take| %>
+        <tr>
+         <td><%= link_to take.name, new_take_order_path(take) %></td>
+         <td><%= take.remaining%></td>
+         <td><%= link_to "在庫", edit_take_path(take) %></td>
+        </tr>
+        <% end %>
+     </tbody>
+    </table>
+  </div>
+ </div>
 </div>
-<% end %>
