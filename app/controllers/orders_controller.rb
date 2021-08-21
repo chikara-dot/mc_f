@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def new
     @take = Take.find(params[:take_id])
+    @orders = Order.all
     @order = Order.new(take_id: @take.id)
   end
 
@@ -9,10 +10,11 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.take_id = params[:take_id]
     @order.save
-
+    
     @take = Take.find(params[:take_id])
     @take.remaining = @take.remaining-@order.take_out
     @take.save
+
     redirect_to takes_path
   end
 

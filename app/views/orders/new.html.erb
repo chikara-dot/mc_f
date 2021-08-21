@@ -1,9 +1,27 @@
-<h1>取出</h1>
+<div class="container">
+ <div class="row">
+  <div class="col">
+   <h1>取出</h1>
 
-<%= form_with model: @order, url: take_orders_path(@take),local:true do |f| %>
- <h3>名前</h3>
- <%= f.text_field :user_name %>
- <h3>数量</h3>
- <%= f.text_field :take_out %>
- <%= f.submit "確定" %>
-<% end %>
+   <%= form_with model: @order, url: take_orders_path(@take),local:true do |f| %>
+    <h3>名前</h3>
+    <%= f.text_field :user_name %>
+    <h3>数量</h3>
+    <%= f.text_field :take_out %>
+    <%= f.submit "確定" %>
+   <% end %>
+  </div>
+ </div>
+
+ <div class="row">
+  <div class="col mt-5">
+   <% @orders.each do |order| %>
+   <div class="toridasi">
+    <div><%= order.created_at.strftime("%Y/%m/%d")%></div>
+    <div class="text-right"><%= order.user_name %></div>
+    <div class="text-right border-bottom"><%= order.take_out %></div>
+   </div>
+   <% end %>
+  </div>
+ </div>
+</div>
