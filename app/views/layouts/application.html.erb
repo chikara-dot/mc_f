@@ -10,11 +10,15 @@
   </head>
 
   <body>
+   <div class="text-right p-5">
     <% if admin_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-      </li>
+        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-danger" %>
+        <%= link_to "在庫一覧", takes_path, class: "btn btn-success" %>
+        <%= link_to "発注", notification_path, class: "btn btn-success" %>
+    <% else %>
+        <%= link_to "ログイン", new_admin_session_path, class: "btn btn-info" %>
     <% end %>
+   </div>
 
     <%= yield %>
   </body>

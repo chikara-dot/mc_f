@@ -27,6 +27,10 @@ class TakesController < ApplicationController
 
   def destroy
   end
+  
+  def notification
+    @notifications = Take.all
+  end
 
   private
   def take_params

@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :takes, only:[:new,:create,:index,:edit,:update,:destroy] do
    resources :orders, only:[:new, :create, :update]
   end
+  
+  get 'notification' => 'takes#notification'
 
 end

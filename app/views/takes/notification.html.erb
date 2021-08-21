@@ -1,0 +1,7 @@
+<h1>発注</h1>
+
+<% @notifications.each do |take| %>
+ <% if take.remaining <= take.lowest %>
+ <%= take.name.to_s + "が残り" + take.remaining.to_s + "です。" %>
+ <% end %>
+<% end %>
