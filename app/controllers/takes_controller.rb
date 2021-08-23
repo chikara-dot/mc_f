@@ -26,8 +26,11 @@ class TakesController < ApplicationController
   end
 
   def destroy
+    @take = Take.find(params[:id])
+    @take.destroy
+    redirect_to takes_path
   end
-  
+
   def notification
     @notifications = Take.all
   end

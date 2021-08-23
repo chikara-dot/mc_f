@@ -8,3 +8,23 @@
   <%= f.text_field :lowest %>
   <%= f.submit '変更' %>
 <% end %>
+
+
+<button type="button" class="btn btn-danger rounded-pill btn-lg" data-toggle="modal" data-target="#exampleModal">
+     削除する
+    </button>
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+       <div class="modal-body">
+        本当に削除しますか？
+       </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <button type="button" class="btn btn-danger">
+           <%= link_to "削除", take_path(@take),method: :delete, class: "text-light"%>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
