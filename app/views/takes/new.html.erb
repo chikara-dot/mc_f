@@ -1,10 +1,24 @@
-<h1>新規登録</h1>
-<%= form_with model:@take, local:true do |f| %>
- <%= f.label "商品名"%>
- <%= f.text_field :name %>
- <%= f.label "在庫"%>
- <%= f.text_field :remaining %>
- <%= f.label "最低個数" %>
- <%= f.text_field :lowest %>
- <%= f.submit '登録' %>
-<% end %>
+<div class="container">
+ <div class="row">
+  <div class="collg-2">
+   <h1>新規登録</h1>
+  </div>
+ </div>
+   <%= form_with model:@take, local:true do |f| %>
+    <div class="mt-2">
+     <%= f.label "商品名　"%>
+     <%= f.text_field :name %>
+    </div>
+    <div class="mt-2">
+     <%= f.label "在庫　　"%>
+     <%= f.text_field :remaining %>
+    </div>
+    <div class="mt-2">
+     <%= f.label "最低個数" %>
+     <%= f.text_field :lowest %>
+    </div>
+    <div class="mt-5 touroku">
+      <%= f.submit '登録', class:"btn btn-info" %>
+    </div>
+   <% end %>
+</div>
