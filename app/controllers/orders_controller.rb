@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   def new
     @take = Take.find(params[:take_id])
-    @orders = Order.all
+    @orders = Order.where(take_id: params[:take_id])
     @order = Order.new(take_id: @take.id)
   end
 
