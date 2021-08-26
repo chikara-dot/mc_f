@@ -1,16 +1,31 @@
-<h1>編集</h1>
-<%= form_with model:@take, local:true do |f| %>
-  <%= f.label "商品名" %>
-  <%= f.text_field :name %>
-  <%= f.label "在庫"%>
-  <%= f.text_field :remaining %>
-  <%= f.label "最低個数" %>
-  <%= f.text_field :lowest %>
-  <%= f.submit '変更' %>
-<% end %>
+<div class="container">
+ <div class="row">
+  <h1>編集</h1>
+ </div>
+   <div class="row">
+    <div class="col">
+     <%= form_with model:@take, local:true do |f| %>
+     <div>
+       <%= f.label "商品名　" %>
+       <%= f.text_field :name %>
+     </div>
+     <div>
+       <%= f.label "在庫　　"%>
+       <%= f.text_field :remaining %>
+     </div>
+     <div>
+       <%= f.label "最低個数" %>
+       <%= f.text_field :lowest %>
+     </div>
+     <div class="touroku">
+       <%= f.submit '変更' ,class:"btn btn-info"%>
+     </div>
+     <% end %>
+    </div>
+   </div>
 
 
-<button type="button" class="btn btn-danger rounded-pill btn-lg" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-danger rounded-pill btn-lg touroku mt-2" data-toggle="modal" data-target="#exampleModal">
      削除する
     </button>
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -28,3 +43,4 @@
       </div>
     </div>
   </div>
+</div>
