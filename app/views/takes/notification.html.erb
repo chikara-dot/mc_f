@@ -1,7 +1,20 @@
-<h1>発注</h1>
+<div class="container">
+ <div class="row">
+  <div class="col">
+   <h1>発注</h1>
+  </div>
+ </div>
 
-<% @notifications.each do |take| %>
- <% if take.remaining <= take.lowest %>
- <%= take.name.to_s + "が残り" + take.remaining.to_s + "です。" %>
- <% end %>
-<% end %>
+ <div class="row">
+ <div class="col">
+  <% @notifications.each do |take| %>
+   <% if take.remaining <= take.lowest %>
+   <div class="mt-2">
+    <%= take.name + "が残り" + take.remaining.to_s + "です。" %>
+    <%= link_to "編集", edit_take_path(take) %>
+   </div>
+   <% end %>
+  <% end %>
+ </div>
+ </div>
+</div>
